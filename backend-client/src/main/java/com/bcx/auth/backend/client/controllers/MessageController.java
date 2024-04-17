@@ -24,7 +24,7 @@ public class MessageController {
     public String getMessages(@RegisteredOAuth2AuthorizedClient("messages-client-authorization-code")
                               OAuth2AuthorizedClient authorizedClient) {
         return webClient.get()
-                .uri("http://backend-resouces:8082/messages")
+                .uri("http://backend-resources:8082/messages")
                 .attributes(ServerOAuth2AuthorizedClientExchangeFilterFunction.oauth2AuthorizedClient(authorizedClient))
                 .retrieve()
                 .bodyToMono(String.class)

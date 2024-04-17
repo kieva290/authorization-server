@@ -5,13 +5,13 @@ spring:
   application.name: backend-auth
   datasource:
     platform: postgres
-    driver-class-name:  org.postgresql.Driver
-    url:  jdbc:postgresql://localhost:5432/authdb
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/authdb
     username: postgres
     password: postgres
-    initialization-mode:  always
+    initialization-mode: always
     jpa:
-      database-platform:  org.hibernate.dialect.PostgreSQLDialect
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
       show-sq-: false
       hibernate:
         ddl-auto: create
@@ -19,7 +19,7 @@ spring:
     deserialization:
       FAIL_ON_IGNORED_PROPERTIES: false
     serialization:
-      INDENT_OUTPUT:  false
-      WRITE_DATES_AS_TIMESTAMPS:  false
-      WRITE_BIGDECIMAL_AS_PLAIN:  true
+      INDENT_OUTPUT: false
+      WRITE_DATES_AS_TIMESTAMPS: false
+      WRITE_BIGDECIMAL_AS_PLAIN: true
 

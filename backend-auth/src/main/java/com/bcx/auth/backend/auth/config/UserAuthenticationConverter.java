@@ -1,6 +1,6 @@
 package com.bcx.auth.backend.auth.config;
 
-import com.bcx.auth.backend.auth.UserDto;
+import com.bcx.auth.backend.auth.dto.UserDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
