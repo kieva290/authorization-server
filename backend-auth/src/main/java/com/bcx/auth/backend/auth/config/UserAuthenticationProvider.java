@@ -22,14 +22,15 @@ import java.util.Optional;
  * UserAuthenticationConverter, then from the username and password present in the Authentication object,
  * validate the information against the database
  * if the username and password don't match with the data present in the database, null is returned as the
- * Authentication object
+ * Authentication object in the SecurityContext
  */
 @Component
 @RequiredArgsConstructor
 public class UserAuthenticationProvider implements AuthenticationProvider {
 
     private final UserRepository userRepository;
-//    private final PasswordEncoder passwordEncoder;
+
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
@@ -44,7 +45,7 @@ public class UserAuthenticationProvider implements AuthenticationProvider {
 
         AuthUser authUser = oUser.get();
 
-        if (passwordEncoder().matches(CharBuffer.wrap(password), authUser.getPassword())) {
+        if (passwordEncoder.matches(CharBuffer.wrap(password), authUser.getPassword())) {
             return UsernamePasswordAuthenticationToken.authenticated(login, password, Collections.emptyList());
         }
 
@@ -54,11 +55,6 @@ public class UserAuthenticationProvider implements AuthenticationProvider {
     @Override
     public boolean supports(Class<?> authentication) {
         return UsernamePasswordAuthenticationToken.class.equals(authentication);
-    }
-
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
     }
 
 }

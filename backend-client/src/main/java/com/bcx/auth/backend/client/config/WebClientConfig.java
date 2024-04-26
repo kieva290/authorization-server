@@ -32,6 +32,7 @@ public class WebClientConfig {
                 new DefaultOAuth2AuthorizedClientManager(clientRegistrationRepository, auth2AuthorizedClientRepository);
 
         authorizedClientManager.setAuthorizedClientProvider(authorizedClientProvider);
+        System.out.println("<<<<<< webclientconfig >>>>>> ");
         return authorizedClientManager;
     }
 

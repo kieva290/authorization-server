@@ -62,7 +62,7 @@ public class SecurityConfig {
         RegisteredClient registeredClient = RegisteredClient.withId(UUID.randomUUID().toString())
                 // client-id and client-secret that must be used from all the OAuth2 clients
                 .clientId("messages-client")
-                .clientSecret("$2b$04$8BeFNn81bsjH2its9hStk.fNpLXMFyrrjSCaHmkJjU1tCt6qWU7Oq")
+                .clientSecret("$2a$12$/xdT4GByOtITcHq7SGtV.ORBMc.Vh3gu3nWz1IDuKxCiBBmG9aiLG")
                 // the Basic authentication method will be used between backend-client and backend-auth
                 .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
                 // grant types to be used
