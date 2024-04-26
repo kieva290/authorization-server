@@ -56,3 +56,11 @@ In this third chapter I use Keycloak as the authorization server. Keycloak will 
 I can also add final users, manage their profile and password.
 
 In this chapter I will connect my Spring Cloud Gateway as a client server to Keycloak. Then, connecter my resources server to validate the JWT against Keycloak.
+
+inside the "backend-keycloak-auth",
+start up the Keyloak authentication server with command,
+"docker-compose up",
+make sure that yu have docker running locally, as this install the images for keycloak,
+plus the postgres database that's used by keycloak,
+the keycloak postgres database is running on port: "5433",
+ 
