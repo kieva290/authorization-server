@@ -44,3 +44,15 @@ Facebook, Github...).
 On the top of that, OpenID Connect will send a richer information about the authenticated user from backend-auth to
 backend-client. This will reduce the communication between those to validate the identity and to obtain some 
 profile information.
+
+## Chapter 2
+In this second chapter I use an application built on top of Spring Cloud Gateway as the Client Server. This application will try to use the Resources Server using the OAuth2 protocol.
+
+Most of the time, the Resource Server and Authorization Server are existing applications which are consumed by hundreds and thousands of clients. The goal is the consume them from a custom application. I've chosen Spring Cloud Gateway as this is a common entry point in a microservice architecture.
+
+## Chapter 3
+In this third chapter I use Keycloak as the authorization server. Keycloak will list all the clients and users. All the authentication will be managed by Keycloak. I can easily add and configure clients, with their callback URLs, WebOrigins and authorization protocols.
+
+I can also add final users, manage their profile and password.
+
+In this chapter I will connect my Spring Cloud Gateway as a client server to Keycloak. Then, connecter my resources server to validate the JWT against Keycloak.

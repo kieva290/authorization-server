@@ -5,8 +5,10 @@ spring:
   application.name: backend-resources
   # the current backend is configured to be used as a resource server
   # then, l must indicate the URI of the backend-auth to be used and which token to be used
+  # previously used backend authentication server "issuer-uri: http://backend-auth:8081"
   security:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://backend-auth:8081
+          issuer-uri: http://backend-keycloak-auth:8080/auth/realms/drake
+
