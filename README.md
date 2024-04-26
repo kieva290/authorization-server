@@ -60,7 +60,6 @@ In this chapter I will connect my Spring Cloud Gateway as a client server to Key
 inside the "backend-keycloak-auth",
 start up the Keyloak authentication server with command,
 "docker-compose up",
-make sure that yu have docker running locally, as this install the images for keycloak,
+make sure that you have docker running locally, as this installs the images for keycloak,
 plus the postgres database that's used by keycloak,
-the keycloak postgres database is running on port: "5433",
- 
+the keycloak postgres database is running on port: "5433" locally,
