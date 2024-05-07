@@ -63,3 +63,13 @@ start up the Keyloak authentication server with command,
 make sure that you have docker running locally, as this installs the images for keycloak,
 plus the postgres database that's used by keycloak,
 the keycloak postgres database is running on port: "5433" locally,
+
+
+Chapter 4
+In this chpater I change the client. Instead of being Spring Cloud Gateway the client of my application, it will be a ReactJS frontend. I still have a Spring Boot application as a resources server behind my Spring Cloud Gateway, and Keycloak as the authorization server.
+
+In this case, I can't get a client_id and client_secret to communicate with Keycloak when authenticating the final user. As storing a client_id and client_secret in the frontend will lead to a security failure, as those keys will be available by everyone which has access to the frontend.
+
+Instead, I must change the protocol used. I must tell to Keycloak that now my client is a public client, and I must also generate a PKCE. The workflow changes a little bit. I still have the client_id, but no more client_secret.
+
+In the frontend, I use the library oidc-client to connect to Keycloak.
